@@ -22,7 +22,7 @@ const CanteenCard = ({ canteen, onClick }) => {
                     alt={canteen.name}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                     onError={(e) => {
-                        e.target.src = 'https://source.unsplash.com/400x300/?restaurant';
+                        e.target.src = 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&h=300&fit=crop';
                     }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark-900/80 to-transparent" />
@@ -35,24 +35,24 @@ const CanteenCard = ({ canteen, onClick }) => {
             </div>
 
             {/* Content */}
-            <h3 className="text-lg font-bold text-white group-hover:text-primary-400 transition-colors mb-2">
+            <h3 className="text-lg font-bold text-white group-hover:text-red-400 transition-colors mb-2">
                 {canteen.name}
             </h3>
 
-            <div className="space-y-2 text-sm text-dark-400">
+            <div className="space-y-2 text-sm text-gray-400">
                 <div className="flex items-center space-x-2">
-                    <FiMapPin className="w-4 h-4" />
+                    <FiMapPin className="w-4 h-4 text-red-500" />
                     <span>{canteen.location}</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                    <FiClock className="w-4 h-4" />
+                    <FiClock className="w-4 h-4 text-red-500" />
                     <span>{canteen.openTime} - {canteen.closeTime}</span>
                 </div>
             </div>
 
             {/* Load bar */}
             <div className="mt-4">
-                <div className="flex items-center justify-between text-xs text-dark-400 mb-1">
+                <div className="flex items-center justify-between text-xs text-gray-500 mb-1">
                     <span>Kitchen Load</span>
                     <span>{Math.round(loadPercentage)}%</span>
                 </div>
